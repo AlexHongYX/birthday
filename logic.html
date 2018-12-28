@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>送给我最爱的你</title>
+
+    <link rel="stylesheet" type="text/css" href="logic.css"/>
+    <script type="text/javascript" src="logic.js"></script>
+    <style type="text/css">
+        body {
+            background: url("loveyou.jpg") no-repeat center center;
+
+            background-size: cover;
+            background-attachment: fixed;
+            width: 100%;
+            height: 100%;
+            cursor: crosshair;
+        }
+        img{
+            display: inline-block;
+        }
+        .goods{
+            width: 50%;/*永远保证在中间位置*/
+            text-align: center;
+            /*background: magenta;*/
+            margin: 50px auto;
+        }
+        .goods img{
+            animation: jump 2s infinite;
+        }
+        @keyframes jump{
+            0%{
+                transform: translate(0px,0px);
+            }
+            50%{
+                transform: translate(0px,-30px);/*往Y轴方向跳动*/
+            }
+            100%{
+                transform: translate(0px,0px);
+            }
+        }
+        /*.circular{
+            width: 200px;
+            height:50px;
+            position: relative;
+            margin-top: -25px;
+            margin-left: 375px;
+            border-radius: 50%;
+            background: dodgerblue;
+            box-shadow: 0px 9px 0px rgba(144,144,144,1), 0px 9px 25px rgba(0,0,0,.7);/*阴影*/
+
+        }*/
+    </style>
+</head>
+
+<body>
+
+<div id="login_frame">
+
+    <p id="image_logo"></p>
+
+    <form method="post" action="3.js">
+
+        <p><label class="label_input">在一起纪念日(eg：0925)</label><input type="text" id="username" class="text_field"/></p>
+        <p><label class="label_input">你的生日(eg:19990925)</label><input type="text" id="password" class="text_field"/></p>
+
+        <div id="login_control">
+            <input type="button" id="btn_login" value="登录" onclick="login();"/>
+        </div>
+    </form>
+</div>
+
+<div class="goods">
+    <img src="balloon.png" alt="" width="200px" height="220px">
+    <div class="circular"></div>
+</div>
+
+</body>
+</html>

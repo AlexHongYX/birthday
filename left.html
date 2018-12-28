@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>傻子晨生日快乐</title>
+    <meta http-equiv="imagetoolbar" content="no">
+    <style type="text/css">
+        html {
+            overflow: hidden;
+        }
+        body {
+            background: url("love.jpeg") no-repeat center center;
+
+            background-size: cover;
+            background-attachment: fixed;
+            width: 100%;
+            height: 100%;
+            cursor: crosshair;
+        }
+        .spanSlide {
+            position: absolute;
+            background: #000;
+            font-size: 1px;
+            overflow: hidden;
+        }
+        .imgSlide {
+            position: absolute;
+            left: 5%;
+            top: 5%;
+            width: 90%;
+            height: 90%;
+            overflow: hidden;
+        }
+        .txtSlide {
+            position: absolute;
+            top: 5%;
+            left: 50px;
+            width:100%;
+            color:#FFF;
+            font-family: arial, helvetica, verdana, sans-serif;
+            font-weight: bold;
+            font-size:96px;
+            letter-spacing:12px;
+            filter: alpha(opacity=70);
+            -moz-opacity:0.7;
+            opacity:0.7;
+
+        }
+    </style>
+
+    <script type="text/javascript">
+
+        var ym=0;
+        var ny=0;
+
+        createElement = function(container, type, param){
+            o=document.createElement(type);
+            for(var i in param)o[i]=param[i];
+            container.appendChild(o);
+            return o;
+        }
+
+        mooz = {
+            O:[],
+            /////////
+            mult:6,
+            nbI:21,
+            /////////
+            rwh:0,
+            imgsrc:0,
+            W:0,
+            H:0,
+
+            Xoom:function(N){
+                this.o = createElement(document.getElementById("screen"), "span", {
+                    'className':'spanSlide'
+                });
+                img = createElement(this.o, "img", {
+                    'className':"imgSlide",
+                    'src':mooz.imgsrc[N%mooz.imgsrc.length].src
+                });
+                spa = createElement(this.o, "span", {
+                    'className':"imgSlide"
+                });
+                txt = createElement(spa, "span", {
+                    'className':"txtSlide",
+                    'innerHTML':mooz.imgsrc[N%mooz.imgsrc.length].title
+                });
+                this.N = 10000+N;
+            },
+
+            mainloop:function(){
+                with(this){
+                    for(i=0; i<mooz.nbI; i++) {
+                        O[i].N += (ym-ny)/8000;
+                        N = O[i].N%nbI;
+                        ti = Math.pow(mult,N);
+                        with(O[i].o.style){
+                            left   = Math.round((W-(ti*rwh))/(W+ti)*(W*.5))+"px";
+                            top    = Math.round((H-ti)/(H+ti)*(H*.5))+"px";
+                            zIndex = Math.round(10000-ti*.1);
+                            width  = Math.round(ti*rwh)+"px";
+                            height = Math.round(ti)+"px";
+                        }
+                    }
+                }
+                setTimeout("mooz.mainloop();", 16);
+            },
+
+            oigres:function(){
+                with(this){
+                    W = parseInt(document.getElementById("screen").style.width);
+                    H = parseInt(document.getElementById("screen").style.height);
+                    imgsrc = document.getElementById("images").getElementsByTagName("img");
+                    rwh = imgsrc[0].width/imgsrc[0].height;
+                    for(var i=0;i<nbI;i++) O[i] = new Xoom(i);
+                    mainloop();
+                }
+            }
+        }
+
+        /*document.onmousemove = function(e){
+            if(window.event) e=window.event;
+            ym = (e.y || e.clientY);
+            if(ym/2>ny)ny=ym/2;
+        }*/
+
+
+        window.onload = function(){
+            ym = ny+50;
+            mooz.oigres();
+
+        }
+
+    </script>
+
+    <audio src="告白气球.mp3" autoplay loop="loop"></audio>
+
+</head>
+
+<body>
+<div style="background-image: url("love.")">
+<div style="height:10%;width: 40%;position:relative;
+            margin-left:34.2%;margin-top:7%;font-size: 50px;color:darkblue;
+            font-family: STHupo,sans-serif;">
+    这是只属于王晨的音乐相册
+</div>
+<div style="position:absolute;left:50%;top:50%">
+    <div style="position:absolute;left:-40px;top:-6px;color:rebeccapurple;
+                font-family:arial;font-size:0.9em">Lording...</div>
+    <div id="screen" style="position:absolute;width:640px;height:480px;
+                left:-320px;top:-240px;overflow:hidden"></div>
+</div>
+
+<div id="images" style="visibility:hidden">
+
+    <img title="乐" src="我们13.jpg"/>
+    <img title="快" src="我们12.jpg"/>
+    <img title="日" src="我们11.jpg"/>
+    <img title="生" src="我们10.jpg"/>
+    <img title="你" src="我们9.jpg"/>
+    <img title="祝" src="我们8.jpg"/>
+    <img title="贝" src="我们7.jpg"/>
+    <img title="宝" src="我们6.jpg"/>
+    <img title="大" src="我们5.jpg"/>
+    <img title="的" src="我们4.jpg"/>
+    <img title="爱" src="我们3.jpg"/>
+    <img title="亲" src="我们2.jpg"/>
+    <img title="你" src="我们1.JPG"/>
+    <img title="晨" src="狗子8.jpg"/>
+    <img title="王" src="狗子7.jpg"/>
+    <img title="的" src="狗子6.jpg"/>
+    <img title="几" src="狗子5.jpg"/>
+    <img title="拉" src="狗子4.jpg"/>
+    <img title="不" src="狗子3.jpg"/>
+    <img title="傻" src="狗子2.jpg"/>
+    <img title="嘿" src="狗子1.jpg"/>
+</div>
+
+</body>
+
+</html>

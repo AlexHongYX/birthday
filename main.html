@@ -1,0 +1,275 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>送给我最爱的你</title>
+
+    <style>
+        body{
+            overflow: hidden;
+            margin: 0;
+            background-image: url("happybirthday.jpg");
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        h1{
+            position: fixed;
+            top: 40%;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            transform:translateY(-50%);
+            font-family: 'Love Ya Like A Sister', cursive;
+            font-size: 40px;
+            color: #c70012;
+            padding: 0 20px;
+        }
+
+        @media (min-width:1200px){
+            h1{
+                font-size: 100px;
+            }
+        }
+    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+    <audio src="往后余生.mp3" autoplay ></audio>
+</head>
+<body>
+
+
+<canvas></canvas>
+<h1 align="center"
+    style="color:red; font-size:50px">
+    <div style="height: 5%;width:20%;position: fixed; font-size: 50px;
+             left: 15%;top: 2%; float: left;">
+        <figure class="circle"></figure>
+        <style type="text/css">
+            .circle {
+                display: block;
+                border-radius: 50%;
+                height: 150px;
+                width: 150px;
+                margin-left: 15%;
+                margin-top: 3%;
+                background-image: url("头像1.jpg");
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+        </style>
+    </div>
+    <div id="timeDiv" style="height:15%;width:40%;position:fixed;
+        left:25%;top:8%;font-size: 30px;color: #dc143c;
+        font-family:STXingkai,sans-serif;float: right;text-align: center">
+    </div>
+    <script type="text/javascript">
+        window.onload=function () {
+            setInterval(show1,1000);
+        }; //设置一个定时器，每隔1s刷新一次
+        function show1(){
+            var area = document.getElementById("timeDiv");
+            //相当于接收html给的信息
+            var dateBegin = new Date(); //日期对象
+            dateBegin.setDate(6);
+            dateBegin.setMonth(9);
+            dateBegin.setFullYear(2016);
+            dateBegin.setHours(22);
+            dateBegin.setMinutes(26);
+            dateBegin.setSeconds(0);
+            var dateEnd = new Date();
+            var dateDiff = dateEnd.getTime() - dateBegin.getTime();//时间差的毫秒数
+            var dayDiff = Math.floor(dateDiff / (24 * 3600 * 1000));//计算出相差天数
+            var leave1=dateDiff%(24*3600*1000) ;   //计算天数后剩余的毫秒数
+            var hours=Math.floor(leave1/(3600*1000));//计算出小时数
+            //计算相差分钟数
+            var leave2=leave1%(3600*1000);    //计算小时数后剩余的毫秒数
+            var minutes=Math.floor(leave2/(60*1000));//计算相差分钟数
+            //计算相差秒数
+            var leave3=leave2%(60*1000);      //计算分钟数后剩余的毫秒数
+            var seconds=Math.round(leave3/1000);
+            var data="我们已经一起走过了:"+dayDiff+"天 "+hours+"小时 "+minutes+" 分钟"+seconds+" 秒";
+            area.innerText=data;
+            //js用innerText把信息返回给前端
+            //document.write(" 距离你答应我已过去了： "+dayDiff+"天 "+hours+"小时 "+minutes+" 分钟"+seconds+" 秒");
+        }
+        show1();
+    </script>
+
+    <div1 id = "test" style="height:30%;width: 50%;position:fixed;left:25%;top:20%;
+        font-size: 23px;color: black; font-weight: bolder; font-family: FZShuTi,sans-serif;;
+        text-align: left;">
+    </div1>
+
+    <div style="height: 20%;width: 50%;position: relative;margin-left: 25%;margin-bottom: 10%;">
+        <div style=" height:200px; width:200px; position:fixed; left:30%; top:70%;
+             background-size:cover;font-size: 20px;color: #3CD8FF; float: left;">
+            <a href="left.html" target="_self">属于你的相册</a>
+            <a href="left.html" target="_self">
+                <img  src="photo.jpg" width="100%"
+                      height="80%" title="属于你的相册"/>
+            </a>
+        </div>
+        <div style=" height:200px; width:200px; position:fixed; left:60%; top:70%;
+             background-size:cover;font-size: 20px;color: #3CD8FF; float: right;">
+            <a href="right.html" target="_self">你最爱的视频</a>
+            <a href="right.html" target="_self">
+                <img  src="media.jpg" width="100%"
+                      height="80%" title="你最爱的视频"/>
+            </a>
+        </div>
+    </div>
+    <script >
+        var text = "\xa0\xa0\xa0\xa0\xa0"+"嘿！亲爱的小王晨。也不知道这算不算是惊喜，" +
+            "但还是祝你生日快乐啦!" +
+            "\n" + "\xa0\xa0\xa0\xa0\xa0"+"今天是我陪你一起过得第三个生日,相信你也看到啦，" +
+            "今天是我们在一起的第813天，" +
+            "从2016年10月7日到现在两年多的时间，我们一起经历了许许多多的事情，有欢笑有争吵" +
+            "，有开心有难过。"+
+            "但我们都一起肩并肩、相互包容、相互体谅地走过来了"+"\n" + "\xa0\xa0\xa0\xa0\xa0"+""+
+            "记得高三那年，我们每天都可以在一起，哪怕是在要求那么严格的补习学校，" +
+            "我觉得就算是不说话，只让我静静地看着你我也会感到很开心、很满足。" +
+            "无论上课下课都想着什么时候能够结束这段难熬的时光，什么时候能更好的和你在一起。" +
+            "当时你个小傻瓜最担心毕业了我们会因为不同学校不同地方而分开，我表面一直在安慰你，" +
+            "不让你想太多，可是晚上每当我睡不着觉的时候，我一个人也会一直在想。" +
+            "所以我拼尽全力帮你复习、给你讲题，还采取了不正确的方式对你发火，惹你伤心。" +
+            "当成绩出来时，我打电话给你听到你的分数，那时我才真正觉得我对你的努力是值得的。" +
+            "填志愿的时候，我给家里人说只会考虑陕西省内的，别的都不会考虑，因为你说你想留在西安，" +
+            "而我一定要陪你。"+"\n" + "\xa0\xa0\xa0\xa0\xa0"+
+            "现在的我每天都在忙着学习，忙着努力，忙着为我们的未来而拼命。我知道你已经想明白啦，" +
+            "你是一定会支持我的。虽然我陪你的时间变短了，但是我一定会在能陪你的时候不干其他任何事，" +
+            "一心只想着你。我的世界里不能没有你，你就是我的整个全部。小傻瓜，你要相信我，也要相信你自己，" +
+            "我努力的终点就是你！我爱你！生日快乐！";
+        text = text.replace(/\n/g,"<br/>");
+        var num = text.length;
+
+        var i =0;
+        function show2() {
+            var shower = text.substr(0,i);
+            document.getElementById("test").innerHTML = shower;
+            i++;
+            if(i + 1 >= num){
+                clearInterval("done")
+            }
+        }
+        var done=setInterval("show2()",329);
+    </script>
+
+</h1>
+
+<script language="javascript" type="text/javascript">
+    function display(){
+        var div1 = document.getElementById("div1");
+        if(div1.style.display=="none"){
+            div1.style.display = "block";
+            div2.style.display = "none";
+        }else{
+            div1.style.display = "none";
+            div2.style.display = "block";
+        }
+    }
+</script>
+
+<script>
+    var canvas = document.querySelector("canvas"),
+        ctx = canvas.getContext("2d");
+
+    var ww,wh;
+
+    function onResize(){
+        ww = canvas.width = window.innerWidth;
+        wh = canvas.height = window.innerHeight;
+    }
+
+    ctx.strokeStyle = "red";
+    ctx.shadowBlur = 25;
+    ctx.shadowColor = "hsla(0, 100%, 60%,0.5)";
+
+    var precision = 100;
+    var hearts = [];
+    var mouseMoved = false;
+    function onMove(e){
+        mouseMoved = true;
+        if(e.type === "touchmove"){
+            hearts.push(new Heart(e.touches[0].clientX, e.touches[0].clientY));
+            hearts.push(new Heart(e.touches[0].clientX, e.touches[0].clientY));
+        }
+        else{
+            hearts.push(new Heart(e.clientX, e.clientY));
+            hearts.push(new Heart(e.clientX, e.clientY));
+        }
+    }
+
+    var Heart = function(x,y){
+        this.x = x || Math.random()*ww;
+        this.y = y || Math.random()*wh;
+        this.size = Math.random()*2 + 1;
+        this.shadowBlur = Math.random() * 10;
+        this.speedX = (Math.random()+0.2-0.6) * 8;
+        this.speedY = (Math.random()+0.2-0.6) * 8;
+        this.speedSize = Math.random()*0.05 + 0.01;
+        this.opacity = 1;
+        this.vertices = [];
+        for (var i = 0; i < precision; i++) {
+            var step = (i / precision - 0.5) * (Math.PI * 2);
+            var vector = {
+                x : (15 * Math.pow(Math.sin(step), 3)),
+                y : -(13 * Math.cos(step) - 5 * Math.cos(2 * step) - 2 * Math.cos(3 * step) - Math.cos(4 * step))
+            }
+            this.vertices.push(vector);
+        }
+    }
+
+    Heart.prototype.draw = function(){
+        this.size -= this.speedSize;
+        this.x += this.speedX;
+        this.y += this.speedY;
+        ctx.save();
+        ctx.translate(-1000,this.y);
+        ctx.scale(this.size, this.size);
+        ctx.beginPath();
+        for (var i = 0; i < precision; i++) {
+            var vector = this.vertices[i];
+            ctx.lineTo(vector.x, vector.y);
+        }
+        ctx.globalAlpha = this.size;
+        ctx.shadowBlur = Math.round((3 - this.size) * 10);
+        ctx.shadowColor = "hsla(0, 100%, 60%,0.5)";
+        ctx.shadowOffsetX = this.x + 1000;
+        ctx.globalCompositeOperation = "screen"
+        ctx.closePath();
+        ctx.fill()
+        ctx.restore();
+    };
+
+
+    function render(a){
+        requestAnimationFrame(render);
+
+        hearts.push(new Heart())
+        ctx.clearRect(0,0,ww,wh);
+        for (var i = 0; i < hearts.length; i++) {
+            hearts[i].draw();
+            if(hearts[i].size <= 0){
+                hearts.splice(i,1);
+                i--;
+            }
+        }
+    }
+
+
+    onResize();
+    window.addEventListener("mousemove", onMove);
+    window.addEventListener("touchmove", onMove);
+    window.addEventListener("resize", onResize);
+    requestAnimationFrame(render);
+</script>
+
+</body>
+</html>
+
+
